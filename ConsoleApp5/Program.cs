@@ -31,7 +31,7 @@ namespace ConsoleApp5
 
                     //comment on the input
 
-                    if (userNumber > 100)
+                    if (userNumber > 100 || userNumber < 0)
                     {
                         Console.WriteLine("That was not a valid input. Try again.");
                         continue;
