@@ -19,7 +19,7 @@ namespace ConsoleApp5
             // user enters in integer btwn 1-100 
             while (true)
             {
-                Console.WriteLine("Please enter in a whole number between 1 and 100.");
+                Console.WriteLine("Please enter in a whole number between 1 and 100 or q to quit.");
                 string userNumberString = Console.ReadLine();
 
                 try
@@ -33,7 +33,7 @@ namespace ConsoleApp5
 
                     if (userNumber > 100)
                     {
-                        Console.WriteLine("That was not a valid input.");
+                        Console.WriteLine("That was not a valid input. Try again.");
                         continue;
                     }
 
@@ -56,15 +56,8 @@ namespace ConsoleApp5
                     {
                         Console.WriteLine(userName + ", " + userNumber + " was even.");
                     }
-
-                    Console.WriteLine("Continue? y/n");
-                    string contInput2 = Console.ReadLine();
-
-                    if (contInput2 == "n")
-                    {
-                        break;
-                    }
-
+               
+                   
                     else
                     {
                         continue;
@@ -74,8 +67,17 @@ namespace ConsoleApp5
 
                 catch 
                 {
-                    Console.WriteLine("That was not a valid input.");
-                    continue;
+
+                    if (userNumberString.ToLower() == "q")
+                    {
+                        break;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("That was not a valid input. Try again.");
+                        continue;
+                    }
                 }
 
            
